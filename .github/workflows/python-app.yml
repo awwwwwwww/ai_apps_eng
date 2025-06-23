@@ -32,7 +32,7 @@ jobs:
 
     - name: Download File
       run: |
-        curl https://www.kaggle.com/api/v1/datasets/download/hugodarwood/epirecipes --output ./data/recipe-ingredients.zip
+        curl 'https://www.kaggle.com/api/v1/datasets/download/hugodarwood/epirecipes' --output ./data/recipe-ingredients.zip
         unzip -o ./data/recipe-ingredients.zip -d ./data
       working-directory: ${{ github.workspace }}
     - name: Lint with flake8
