@@ -29,6 +29,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest 
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: DownloadData
+      uses: foxtrotperry/fetch-file-action@v0
+      with:
+        url: 'https://www.kaggle.com/api/v1/datasets/download/hugodarwood/epirecipes'
+        path: './data/'
+        filename: 'recipe-ingredients.zip'
+    - name: Extract tgz
+      uses: ihiroky/extract-action@v1
+      with:
+        file_path: data/recipe-ingredients.zip
+        extract_dir: data
+
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
