@@ -15,7 +15,7 @@ if torch.cuda.is_available():
 
 torch.set_default_device(device)
 print(f"Using device = {torch.get_default_device()}")
-data_path = './data/full_format_recipes.json' #path to the dataset
+data_path = 'data/full_format_recipes.json' #path to the dataset
 
 import string
 import unicodedata
