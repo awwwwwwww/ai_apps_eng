@@ -110,7 +110,7 @@ class recipeDataset(Dataset):
         return label_tensor, data_tensor, data_label, data_item
 
 
-alldata = recipeDataset(os.path.dirname(os.getcwd())+'/'+data_path)
+alldata = recipeDataset(os.path.dirname(os.getcwd())+'ai_apps_eng/'+data_path)
 print(f"loaded {len(alldata)} items of data")
 print(f"example = {alldata[0]}")
 
