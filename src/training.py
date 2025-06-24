@@ -15,7 +15,7 @@ if torch.cuda.is_available():
 
 torch.set_default_device(device)
 print(f"Using device = {torch.get_default_device()}")
-data_path = 'data\\full_format_recipes.json' #path to the dataset
+data_path = 'data/full_format_recipes.json' #path to the dataset
 
 import string
 import unicodedata
@@ -110,7 +110,7 @@ class recipeDataset(Dataset):
         return label_tensor, data_tensor, data_label, data_item
 
 
-alldata = recipeDataset(os.path.dirname(os.getcwd())+'\\'+data_path)
+alldata = recipeDataset(os.path.dirname(os.getcwd())+'/'+data_path)
 print(f"loaded {len(alldata)} items of data")
 print(f"example = {alldata[0]}")
 
