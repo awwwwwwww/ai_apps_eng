@@ -34,6 +34,7 @@ jobs:
       run: |
         curl -L -o ./data/recipe-ingredients.zip https://www.kaggle.com/api/v1/datasets/download/hugodarwood/epirecipes
         unzip -o ./data/recipe-ingredients.zip -d ./data
+        pwd
       working-directory: ${{ github.workspace }}
     - name: Lint with flake8
       run: |
@@ -44,3 +45,4 @@ jobs:
     - name: run training script
       run: |
         python src/training.py
+      working-directory: ${{ github.workspace }}
