@@ -1,0 +1,18 @@
+@startuml recipeGenBDD
+object "Recipe Generator" as rg
+object "Model" as m
+object "Data" as d
+object "Trainer" as t
+object "Frontend" as f
+object "Docker Infrastructure" as di
+object "Compute" as c
+object "Monitoring" as mon
+
+rg *-- m
+rg *-- f
+rg *-- di
+rg *-- c
+rg *-- mon
+m <-- t
+t <-- d
+@enduml

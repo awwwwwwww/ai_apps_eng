@@ -1,0 +1,24 @@
+@startuml recipeGenIBD
+allow_mixing
+object "Model" as m
+object "Data" as d
+object "Trainer" as t
+object "Frontend" as f
+object "Docker Infrastructure" as di
+object "Compute" as c
+object "Monitoring" as mon
+actor "User" as u
+
+m <-- t : Generates
+t <-- d : Trains Model
+f <-- u : Input Ingredients and Cuisine
+f --> u : Recive Recipe
+m <-- di : Hosts
+f <-- di : Hosts
+di <-- c : Hosts
+f <-- m : Provides Recommendation
+m <-- f : Query model
+mon <-- di : Stores performance
+mon <-- c : Stores performance
+
+@enduml
