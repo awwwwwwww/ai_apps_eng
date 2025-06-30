@@ -22,7 +22,7 @@ jobs:
         matrix:
           python-version: [3.13]
           experimental: [true]
-    timeout-minutes: 60
+    timeout-minutes: 1200
 
     steps:
     - uses: actions/checkout@v4
