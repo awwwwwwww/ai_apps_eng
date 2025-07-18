@@ -1,0 +1,11 @@
+@startuml recipeGenUC
+(Training)
+(Startup)
+"Make Recommendations" as (mr)
+(Debug)
+:User: --> (mr)
+:Admin: --> (Training)
+:Admin: --> (Startup)
+:Admin: --> (Debug)
+:Admin: --> (Shutdown)
+@enduml

@@ -115,7 +115,7 @@ print(f"loaded {len(alldata)} items of data")
 print(f"example = {alldata[0]}")
 
 
-train_set, test_set = torch.utils.data.random_split(alldata, [.9, .1], generator=torch.Generator(device=device).manual_seed(42))
+train_set, test_set, not_used_set= torch.utils.data.random_split(alldata, [.2, .1, .7], generator=torch.Generator(device=device).manual_seed(42))
 
 print(f"train examples = {len(train_set)}, validation examples = {len(test_set)}")
 
